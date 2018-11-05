@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>a{TEXT-DECORATION:none}</style>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Mr.John</title>
+</head>
+<body>
+
+<div style="border: 1px solid red;text-align: center">
+    添加一张临时图片得到微信的media_id保存数据库!
+    <form method="POST" action="uploads" enctype="multipart/form-data">
+        <!--<input type="file" id="file" name="file" /><br/><br/>-->
+        <input type="file" name="file" title="请选择图片" id="file" multiple="multiple" accept="image/png,image/jpg,image/gif,image/JPEG"/>选择图片
+        <input type="submit" id="put"  value="上传" />
+    </form>
+</div>
+</body>
+
+<!--<script>
+    $(function () {
+   $("#put").click(function(){
+        var fl = document.querySelector('#file').files[0];
+        console.log(fl);
+        var fd = new FormData();
+        fd.append("file", fl);
+       $.ajax({
+           type:'post',
+           url:'http://localhost:8082/uploads',
+           data:{
+               "file":fd
+           },
+           success:function (response) {
+               console.log(response);
+               alert(response);
+           },
+                error:function (res) {
+                    alert("内部错误");
+                }
+            }
+
+        )
+    });
+    })
+</script>-->
+</html>
