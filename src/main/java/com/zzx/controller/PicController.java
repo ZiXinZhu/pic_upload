@@ -74,8 +74,6 @@ public class PicController {
         out.write(file);
         out.flush();
         out.close();
-       /* @Select("SELECT count(id) FROM picture where path=#{Path}")
-        int getByPath(@Param(value = "Path")String Path);*/
     }
 
 }
