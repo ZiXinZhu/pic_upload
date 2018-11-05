@@ -39,7 +39,7 @@ public class PicController {
             String mes = base64en.encode(messageDigest.digest(filename.getBytes("utf-8")));
 
             String filePath = "/home/upload/pic/"; //映射的地址
-            uploadFile(file.getBytes(), filePath, filename);
+            uploadFile(file.getBytes(), filePath);
 //            /home/upload/pic/
             Picture picture = new Picture();
             String pa = "/home/upload/pic/"+"..." + mes;
@@ -65,12 +65,12 @@ public class PicController {
         return;
     }
 
-    public static void uploadFile(byte[] file, String filePath, String fileName) throws Exception {
+    public static void uploadFile(byte[] file, String filePath) throws Exception {
         File targetFile = new File(filePath);
         if (!targetFile.exists()) {
             targetFile.mkdirs();
         }
-        FileOutputStream out = new FileOutputStream(filePath + fileName);
+        FileOutputStream out = new FileOutputStream(filePath);
         out.write(file);
         out.flush();
         out.close();
